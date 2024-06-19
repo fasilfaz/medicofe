@@ -38,12 +38,16 @@ import ContactPage from './pages/ContactPage.jsx'
 import DoctorsCard from './pages/admin/DoctorsCard.jsx'
 import UserAppointmentPage from './pages/user/UserAppointmentPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
 
 
 const router = createBrowserRouter([
   {
     element: (
-         <HomeLayout/>
+        <UserRoutes>
+          <HomeLayout/>
+        </UserRoutes>
+         
     ),
     children: [
       {
