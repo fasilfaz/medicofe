@@ -43,9 +43,7 @@ import AboutPage from './pages/AboutPage.jsx'
 const router = createBrowserRouter([
   {
     element: (
-      <EasyMethod>
          <HomeLayout/>
-      </EasyMethod>
     ),
     children: [
       {
@@ -72,9 +70,7 @@ const router = createBrowserRouter([
   },
  {
   element: (
-    <EasyMethod>
       <UserHomeLayout/>
-    </EasyMethod>
   ),
   children: [
     {
