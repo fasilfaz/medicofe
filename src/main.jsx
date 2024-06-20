@@ -38,6 +38,7 @@ import ContactPage from './pages/ContactPage.jsx'
 import DoctorsCard from './pages/admin/DoctorsCard.jsx'
 import UserAppointmentPage from './pages/user/UserAppointmentPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import ServiceUpdate from './pages/admin/ServiceUpdate.jsx'
 
 
 const router = createBrowserRouter([
@@ -71,7 +72,10 @@ const router = createBrowserRouter([
   },
  {
   element: (
+    <EasyMethod>
       <UserHomeLayout/>
+    </EasyMethod>
+      
   ),
   children: [
     {
@@ -139,7 +143,7 @@ const router = createBrowserRouter([
     // },
     {
       path: "/admin/services-update/:id",
-      element: <ServiceAdding/>
+      element: <ServiceUpdate/>
     },
     {
       path: "/admin/services-page",

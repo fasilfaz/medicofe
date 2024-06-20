@@ -16,21 +16,19 @@ const serviceSchema = yup.object({
 export default function ServiceAdding () {
  
     const navigate = useNavigate();
-    const {id} = useParams();
-    const isEdit = Boolean(id);
+    
 
-    const getId = async () => {
-        if (!isEdit) return;
-        try {
-            let res = await axios.get(`http://localhost:3000/api/v1/admin/get-servicesbyid/${id}`);
-            console.log(res.data);
-            let formValue = res.data.data;
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    // const getId = async () => {
+    //     try {
+    //         let res = await axios.get(`http://localhost:3000/api/v1/admin/get-servicesbyid/${id}`);
+    //         console.log(res.data);
+    //         let formValue = res.data.data;
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
 
-    useEffect(() =>{getId()},[id]);
+    // useEffect(() =>{getId()},[id]);
     const {
         register,
         handleSubmit,
@@ -56,7 +54,7 @@ export default function ServiceAdding () {
                     },
                 }
             );
-            navigate("/admin/services-card");
+            navigate("/admin/services-page");
             console.log("service added",res.data);
         } catch (error) {
             console.error("error adding services", error)
@@ -82,7 +80,7 @@ export default function ServiceAdding () {
                  boxShadow: "10px 10px 20px #ccc"
                  }}}>
                     <Typography variant="h4" textAlign="center"className="text-color" >
-                        {isEdit? "Edit Service" : "Add Service"}
+                        Add Service
                     </Typography>
                     <TextField {...register("title")} margin="normal" type="text" label="Title" variant="outlined"/>
                     {errors.title && <p>{errors.title.message}</p>}
@@ -94,7 +92,7 @@ export default function ServiceAdding () {
                         
                         <button  type="submit" className="bg-color pr-4 pl-4 pt-2 pb-2 rounded-2xl text-white hover:bg-white hover:text-color hover:border-2 hover:border-color m-3"
                         >
-                         {isEdit? "Update" : "Submit"}
+                         Submit
                         </button>
                         
                         

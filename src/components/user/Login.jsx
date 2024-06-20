@@ -30,7 +30,7 @@ const Login = () => {
       data,{withCredentials:true},);
     if (res.data.message === "Admin logged in successfully") {
       toast.success("Admin logged in successfully")
-      console.log("data",res.data);
+      console.log("data",res.cookies);
       navigate('/admin/homepage', {replace: true});
     } else if (res.data.message === "logged in") {
       toast.success("Patient logged in successfully")
