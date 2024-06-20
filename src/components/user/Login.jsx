@@ -32,7 +32,10 @@ const Login = () => {
     if (message === "Admin logged in successfully") {
       toast.success("Admin logged in successfully")
       setTimeout(function() {
+        console.log("before")
         navigate('/admin/homepage', {replace: true});
+        console.log("after")
+        
     }, 5000); 
       console.log("data",res.cookie);
 
