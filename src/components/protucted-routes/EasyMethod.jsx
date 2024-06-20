@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const EasyMethod = ({ children}) => {
 
     const navigate = useNavigate();
-    const token = Cookies.get("token");
+    const token =  Cookies.get("token");
     console.log(token, "tokken");
     useEffect(() => {
         if(token === undefined || token === null){

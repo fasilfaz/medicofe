@@ -6,6 +6,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 
 
 const userSchema = yup.object({
@@ -31,13 +32,15 @@ const Login = () => {
       let message = await res.data.message;
     if (message === "Admin logged in successfully") {
       toast.success("Admin logged in successfully")
+      Cookies.set('token', res.data.token);
+
       setTimeout(function() {
         console.log("before")
         navigate('/admin/homepage', {replace: true});
         console.log("after")
         
-    }, 5000); 
-      console.log("data",res.cookie);
+    }, 2000); 
+      console.log("data", Cookies.get("token"));
 
       
       console.log(res.data.message);
