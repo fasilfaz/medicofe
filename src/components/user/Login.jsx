@@ -28,12 +28,17 @@ const Login = () => {
     const res = await axios.post(
       "http://localhost:3000/api/v1/user/login",
       data,{withCredentials:true},);
-    if (res.data.message === "Admin logged in successfully") {
+      let message = await res.data.message;
+    if (message === "Admin logged in successfully") {
       toast.success("Admin logged in successfully")
+      setTimeout(function() {
+        navigate('/admin/homepage', {replace: true});
+    }, 5000); 
       console.log("data",res.cookie);
-      navigate('/admin/homepage', {replace: true});
+
+      
       console.log(res.data.message);
-    } else if (res.data.message === "logged in") {
+    } else if (message === "logged in") {
       
       toast.success("Patient logged in successfully")
       console.log("data",res.data);
