@@ -5,6 +5,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Cookies from "js-cookie";
 
 const doctorSchema = yup
   .object({
