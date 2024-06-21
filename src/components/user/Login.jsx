@@ -32,7 +32,7 @@ const Login = () => {
       let message = await res.data.message;
     if (message === "Admin logged in successfully") {
       toast.success("Admin logged in successfully")
-      Cookies.set('token', res.data.token);
+      // Cookies.set('token', res.data.token);
 
       setTimeout(function() {
         console.log("before")
