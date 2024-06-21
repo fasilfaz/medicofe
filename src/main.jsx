@@ -39,6 +39,7 @@ import DoctorsCard from './pages/admin/DoctorsCard.jsx'
 import UserAppointmentPage from './pages/user/UserAppointmentPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ServiceUpdate from './pages/admin/ServiceUpdate.jsx'
+import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
 
 
 const router = createBrowserRouter([
@@ -72,9 +73,9 @@ const router = createBrowserRouter([
   },
  {
   element: (
-    <EasyMethod>
+    <UserRoutes>
       <UserHomeLayout/>
-    </EasyMethod>
+    </UserRoutes>
       
   ),
   children: [

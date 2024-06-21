@@ -15,57 +15,58 @@ const serviceSchema = yup.object({
 const ServiceUpdate = () => {
   const navigate = useNavigate();
     const {id} = useParams();
-    const [services, setServices] = useState(
-        {
-          _id: "",
-          title: "",
-          description: "",
-          image: "",
-        },
   
-    );
-
+    const { register, handleSubmit,setValue, formState: { errors } } = useForm({ resolver: yupResolver(serviceSchema) });
   useEffect(() => {
     const getService = async () => {
       try {
+        
         let res = await axios.get(
-            "http://localhost:3000/api/v1/admin/get-services",
-        );
-        const data = await res.data;
-        setServices(data)
-        console.log("service:", data);
+            `http://localhost:3000/api/v1/admin/get-servicesbyid/${id}`,
+            {withCredentials: true},
+        ).then((res) => {
+          const data = res.data.service;
+          console.log(data);
+          const { title, description} = data;
+          setValue("title", title);
+          setValue("description", description);
+        });
+
+        // const data = await res.data;
+        // setServices(data)  
+        // console.log("service:", data);
+        // console.log(res.data.service);
+        // setService(res.data.service)
+
       } catch (error) {
         console.error(error);
       }
     };
     getService();
   }, []);
-
-  const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(serviceSchema) });
+  
 
   const onSubmit = async (data) => {
-    const reqBody = {
-      title: data.title,
-      description: data.description,
-    };
+   
 
     try {
-      const res = await axios.put(
-        `http://localhost:3000/api/v1/admin/update-services/${services._id}`,
-        reqBody,
-        {
-          withCredentials: true,
-        //   headers: {
-        //     "Content-Type": "multipart/form-data",
-        //   },
-        }
-      );
-      const dataa = await res.data;
-      if (dataa === "service updated") {
-        window.location.reload();
-      }
-      navigate("/admin/services-card");
-      console.log(dataa);
+
+      // const res = await axios.put(
+      //   `http://localhost:3000/api/v1/admin/update-services/${id}`,
+      //   reqBody,
+      //   {
+      //     withCredentials: true,
+      //   //   headers: {
+      //   //     "Content-Type": "multipart/form-data",
+      //   //   },
+      //   }
+      // );
+      // const data = await res.data;
+      // if (dataa === "service updated") {
+      //   window.location.reload();
+      // }
+      // navigate("/admin/services-card");
+      console.log(data);
     } catch (error) {
       console.error("Error updating service:", error);
     }
@@ -102,7 +103,6 @@ const ServiceUpdate = () => {
               type="text"
               label="Title"
               variant="outlined"
-              value={services.title}
             />
             {errors.title && <p>{errors.title.message}</p>}
             <TextField
@@ -111,7 +111,6 @@ const ServiceUpdate = () => {
               type="text"
               label="Description"
               variant="outlined"
-              value={services.description}
             />
             {errors.description && <p>{errors.description.message}</p>}
             <div>
