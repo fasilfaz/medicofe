@@ -12,9 +12,7 @@ const Profile = () => {
         const getProfile = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:3000/api/v1/user/getuser", {
-                    withCredentials: true
-                });
+                    "http://localhost:3000/api/v1/user/getuser", );
                 const data = await res.data.data;
                 console.log(data);
                 setUser(data);
