@@ -11,7 +11,7 @@ const Notifications = () => {
 
     const handleMarkAllRead = async () => {
         try {
-            const res = await axios.post("http://localhost:3000/api/v1/user/get-notification", {userId:user._id});
+            const res = await axios.post("http://localhost:3000/api/v1/user/get-notification", );
             if (res.data.success){
                 message.success(res.data.message)
             } else {
@@ -23,7 +23,7 @@ const Notifications = () => {
     }
     const handleDeleteMarkAllRead = async () => {
         try {
-            const res = await axios.post("http://localhost:3000/api/v1/user/delete-notification", {userId:user._id});
+            const res = await axios.post("http://localhost:3000/api/v1/user/delete-notification",);
             if (res.data.success){
                 message.success(res.data.message)
             } else {

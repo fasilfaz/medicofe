@@ -55,12 +55,23 @@ const DoctorsCard = () => {
                   key={index}
                   className="bg-white rounded-lg shadow-md overflow-hidden w-[340px] p-5"
                 >
-                    <Grid container>
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className="h-[250px] flex justify-center items-center">
-                    <img src={users.image} alt={"doctors image"} className="w-full h-full object-cover rounded-lg" />
+                  <Grid container>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={12}
+                      md={12}
+                      lg={12}
+                      xl={12}
+                      className="h-[250px] flex justify-center items-center"
+                    >
+                      <img
+                        src={users.image}
+                        alt={"doctors image"}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
                     </Grid>
-                  
-                  
+
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                       <p className="text-color font-bold text-lg">Name</p>
                       <p>
@@ -68,12 +79,6 @@ const DoctorsCard = () => {
                       </p>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                      <p className="text-color font-bold text-lg">
-                        Blood Group
-                      </p>
-                      <p>{users.bloodGroup}</p>
-                    </Grid>
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                       <p className="text-color font-bold text-lg">
                         Qualification
@@ -87,25 +92,15 @@ const DoctorsCard = () => {
                       <p>{users.specializations}</p>
                     </Grid>
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                      <p className="text-color font-bold text-lg">
-                        Experience
-                      </p>
+                      <p className="text-color font-bold text-lg">Experience</p>
                       <p>{users.experiences}</p>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                      <p className="text-color font-bold text-lg">Fees</p>
-                      <p>{users.fees}</p>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                      <p className="text-color font-bold text-lg">Time</p>
-                      <p>{users.timings}</p>
                     </Grid>
                   </Grid>
                   <div className="flex flex-row justify-center pb-2">
                     <div>
-                      <Link to="/admin/book">
+                      <Link to={`/admin/book/${users._id}`}>
                         <button className="bg-color pr-4 pl-4 pt-2 pb-2 rounded-2xl text-white hover:bg-white hover:text-color hover:border-2 hover:border-color m-3">
-                          Book Now
+                          Click Now
                         </button>
                       </Link>
                     </div>

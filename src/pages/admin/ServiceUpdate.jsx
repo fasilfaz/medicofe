@@ -26,7 +26,6 @@ const ServiceUpdate = () => {
             {withCredentials: true},
         ).then((res) => {
           const data = res.data.service;
-          console.log(data);
           const { title, description} = data;
           setValue("title", title);
           setValue("description", description);
@@ -35,7 +34,6 @@ const ServiceUpdate = () => {
         // const data = await res.data;
         // setServices(data)  
         // console.log("service:", data);
-        // console.log(res.data.service);
         // setService(res.data.service)
 
       } catch (error) {
@@ -65,8 +63,8 @@ const ServiceUpdate = () => {
       // if (dataa === "service updated") {
       //   window.location.reload();
       // }
-      // navigate("/admin/services-card");
-      console.log(data);
+      navigate("/admin/services-card");
+      console.log(data, "gggggg");
     } catch (error) {
       console.error("Error updating service:", error);
     }

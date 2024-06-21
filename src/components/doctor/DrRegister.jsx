@@ -200,7 +200,7 @@ const Register = () => {
             </form>
             <p className="text-sm text-center mt-4 text-gray-600">
               already register!{" "}
-              <Link to="/user/login" className="text-blue-500 underline">
+              <Link to="/doctor/login" className="text-blue-500 underline">
                 login
               </Link>
             </p>
