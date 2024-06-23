@@ -114,9 +114,9 @@ const router = createBrowserRouter([
  },
  {
   element: (
-    <EasyMethod>
+    <UserRoutes>
       <AdminHomeLayout/>
-    </EasyMethod>
+    </UserRoutes>
   ),
   children: [
     {
