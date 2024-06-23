@@ -1,20 +1,33 @@
 import { Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 const Booking = () => {
-  const [users, setUsers] = useState([]);
+  const [doctors, setDoctors] = useState([]);
+  const {user} = useSelector((state) => state.user);
   const { id } = useParams();
 
   const handleBooking = async () => {
     try {
-        
+        const res = await axios.post(
+            "http://localhost:3000/api/v1/user//book-appointment",{
+                doctorId : id,
+                userId: user._id,
+                doctorInfo: doctors,
+                userInfo: user,
+            }
+
+        );
+        if ( res.data.success ) {
+            setDoctors(res.data.data);
+        }
     } catch (error) {
-        
+        console.log(error);
     }
   }
   useEffect(() => {
-    const getUsers = async () => {
+    const getdoctors = async () => {
       const res = await axios.get(
         `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
         {
@@ -26,20 +39,20 @@ const Booking = () => {
       );
       const data = await res.data.doctor;
       console.log(data, "json");
-      setUsers(data);
+      setDoctors(data);
     };
-    getUsers();
+    getdoctors();
   }, []);
   return (
     <section className="p-20 bg-gray-100">
       <div className="container">
         <h2 className="text-3xl font-bold text-center text-color mb-8">
-          Book Dr. {users.firstName} {users.lastName}
+          Book Dr. {doctors.firstName} {doctors.lastName}
         </h2>
 
         <div className="flex justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
-            {users && (
+            {doctors && (
               <div className="bg-white rounded-lg shadow-md overflow-hidden w-[340px] p-5">
                 <Grid container>
                   <Grid
@@ -52,7 +65,7 @@ const Booking = () => {
                     className="h-[250px] flex justify-center items-center"
                   >
                     <img
-                      src={users.image}
+                      src={doctors.image}
                       alt={"doctors image"}
                       className="w-full h-full object-cover rounded-lg"
                     />
@@ -61,7 +74,7 @@ const Booking = () => {
                   <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                     <p className="text-color font-bold text-lg">Name</p>
                     <p>
-                      {users.firstName} {users.lastName}
+                      {doctors.firstName} {doctors.lastName}
                     </p>
                   </Grid>
 
@@ -69,25 +82,25 @@ const Booking = () => {
                     <p className="text-color font-bold text-lg">
                       Qualification
                     </p>
-                    <p>{users.qualifications}</p>
+                    <p>{doctors.qualifications}</p>
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                     <p className="text-color font-bold text-lg">
                       Specialization
                     </p>
-                    <p>{users.specializations}</p>
+                    <p>{doctors.specializations}</p>
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                     <p className="text-color font-bold text-lg">Experience</p>
-                    <p>{users.experiences}</p>
+                    <p>{doctors.experiences}</p>
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                     <p className="text-color font-bold text-lg">Fees</p>
-                    <p>{users.fees}</p>
+                    <p>{doctors.fees}</p>
                   </Grid>
                   <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                     <p className="text-color font-bold text-lg">Time</p>
-                    <p>{users.timings}</p>
+                    <p>{doctors.timings}</p>
                   </Grid>
                 </Grid>
                 <div className="flex flex-row justify-center pb-2">
