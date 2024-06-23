@@ -78,7 +78,7 @@ const Register = () => {
             <h2 className="text-2xl font-semibold text-center text-color mb-6">
               Register here
             </h2>
-            <form className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               <div className="grid grid-cols-2 gap-4">
                 <TextField
                   {...register("firstName")}
@@ -150,10 +150,10 @@ const Register = () => {
                   fullWidth
                 />
               </div>
-              <button className="w-full bg-color py-2 rounded-2xl text-white hover:bg-white hover:text-color hover:border-2 hover:border-color ">
+              <button type="submit" className="w-full bg-color py-2 rounded-2xl text-white hover:bg-white hover:text-color hover:border-2 hover:border-color ">
                 Register
               </button>
-            </form>
+            </div>
             <p className="text-sm text-center mt-4 text-gray-600">
               already register!{" "}
               <Link to="/user/login" className="text-blue-500 underline">
