@@ -40,6 +40,7 @@ import UserAppointmentPage from './pages/user/UserAppointmentPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ServiceUpdate from './pages/admin/ServiceUpdate.jsx'
 import Booking from './components/Booking.jsx'
+import { RecoilRoot } from 'recoil'
 
 
 const router = createBrowserRouter([
@@ -73,8 +74,10 @@ const router = createBrowserRouter([
   },
  {
   element: (
-   
-      <UserHomeLayout/>
+   <EasyMethod>
+   <UserHomeLayout/>
+
+   </EasyMethod>
     
       
   ),
@@ -228,8 +231,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <Provider store={store}>
     <React.StrictMode>
+      <RecoilRoot>
       <RouterProvider router={router}/>
       <ToastContainer position='bottom-right' />
+
+      </RecoilRoot>
     </React.StrictMode>
   </Provider>
     
