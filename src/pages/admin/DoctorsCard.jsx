@@ -48,7 +48,7 @@ const DoctorsCard = () => {
           care and compassionate treatment.
         </p>
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {users &&
               users.map((users, index) => (
                 <div
@@ -100,7 +100,7 @@ const DoctorsCard = () => {
                     <div>
                       <Link to={`/admin/book/${users._id}`}>
                         <button className="bg-color pr-4 pl-4 pt-2 pb-2 rounded-2xl text-white hover:bg-white hover:text-color hover:border-2 hover:border-color m-3">
-                          Click Now
+                          Book Now
                         </button>
                       </Link>
                     </div>

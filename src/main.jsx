@@ -73,9 +73,9 @@ const router = createBrowserRouter([
   },
  {
   element: (
-    <EasyMethod>
+   
       <UserHomeLayout/>
-    </EasyMethod>
+    
       
   ),
   children: [

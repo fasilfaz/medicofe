@@ -37,7 +37,7 @@ const ServiceCard = () => {
                 Our goal is to provide high-quality,
                  personalized care to ensure the best possible outcomes. Here is an overview of the key services we provide.</p>
                 <div className='flex justify-center'>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {services &&
                    services.map((service, index) => (
                     <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden w-[380px]">

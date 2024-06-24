@@ -1,12 +1,32 @@
 import { Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 const Booking = () => {
   const [doctors, setDoctors] = useState([]);
-  const {user} = useSelector((state) => state.user);
+//   const {user} = useSelector((state) => state.user);
   const { id } = useParams();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const getProfile = async () => {
+      try {
+        const res = await axios.get(
+          "http://localhost:3000/api/v1/user/getuser",
+          {
+            withCredentials: true,
+          }
+        );
+        const data = await res.data.data;
+        console.log(data);
+        setUser(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getProfile();
+  }, []);
 
   const handleBooking = async () => {
     try {
@@ -51,7 +71,7 @@ const Booking = () => {
         </h2>
 
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
+          <div className="grid xs:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
             {doctors && (
               <div className="bg-white rounded-lg shadow-md overflow-hidden w-[340px] p-5">
                 <Grid container>
@@ -112,7 +132,7 @@ const Booking = () => {
                         hover:bg-white hover:text-color hover:border-2
                          hover:border-color m-3"
                          onClick={handleBooking}>
-                        Book Now
+                        Conform
                       </button>
                     </Link>
                   </div>

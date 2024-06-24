@@ -22,12 +22,17 @@ const Login = () => {
   });
 
   const onSubmit = async (data) => {
+
     try {
+      // const token = Cookies.get("token");
+
       const res = await axios.post(
         "http://localhost:3000/api/v1/user/login",
         data,
+        // {application},
         { withCredentials: true }
       );
+
       let message = await res.data.message;
       if (message === "Admin logged in successfully") {
         toast.success("Admin logged in successfully");
