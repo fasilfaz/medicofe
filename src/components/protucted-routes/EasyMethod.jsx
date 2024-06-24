@@ -12,9 +12,9 @@ const EasyMethod = ({ children}) => {
     //     }
     // },[navigate, token]);
     // return children;
-    if (token === undefined) {
-        navigate("/user/login", {replace: true});
-    }
+    // if (token === undefined) {
+    //     navigate("/user/login", {replace: true});
+    // }
     return children;
 }
 

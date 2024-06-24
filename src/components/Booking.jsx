@@ -19,7 +19,7 @@ const Booking = () => {
           }
         );
         const data = await res.data.data;
-        console.log(data);
+        console.log("userrr", data);
         setUser(data);
       } catch (error) {
         console.log(error);
