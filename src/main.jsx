@@ -76,10 +76,10 @@ const router = createBrowserRouter([
   },
  {
   element: (
-   <EasyMethod>
+   <UserRoutes>
    <UserHomeLayout/>
 
-   </EasyMethod>
+   </UserRoutes>
     
       
   ),
@@ -113,7 +113,7 @@ const router = createBrowserRouter([
       element: <UserAppointmentPage/>
     },
     {
-      path: "/user/book/:id",
+      path: "/book/:id",
       element: <Booking/>
     }
     
@@ -172,7 +172,7 @@ const router = createBrowserRouter([
       element: <AboutPage/>
     },
     {
-      path: "/admin/book/:id",
+      path: "/book/:id",
       element: <Booking/>
     }
   ]
@@ -229,7 +229,7 @@ const router = createBrowserRouter([
       element: <UserAppointmentPage/>
     },
     {
-      path: "/doctor/book/:id",
+      path: "/book/:id",
       element: <Booking/>
     }
   ]

@@ -102,7 +102,7 @@ const DoctorsCard = () => {
                   </Grid>
                   <div className="flex flex-row justify-center pb-2">
                     <div>
-                      <Link to={`/admin/book/${users._id}`}>
+                      <Link to={`/book/${users._id}`}>
                         <button className="bg-color pr-4 pl-4 pt-2 pb-2 rounded-2xl text-white hover:bg-white hover:text-color hover:border-2 hover:border-color m-3">
                           Book Now
                         </button>
