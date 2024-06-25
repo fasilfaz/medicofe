@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faBookOpenReader,faCircleInfo,faComments,faUserAlt, faHomeAlt, faHandHoldingMedical } from '@fortawesome/free-solid-svg-icons'
+import {  faBookOpenReader,faCircleInfo,faComments,faUserAlt, faHomeAlt, faHandHoldingMedical, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 export const UserNavbar = () => {
 
@@ -25,6 +25,10 @@ export const UserNavbar = () => {
     {
       path:"/user/about",
       icon: faCircleInfo,
+    },
+    {
+      path: "/user/logout",
+      icon: faSignOutAlt,
     },
   
     
