@@ -111,6 +111,10 @@ const router = createBrowserRouter([
     {
       path: "/user/appointment",
       element: <UserAppointmentPage/>
+    },
+    {
+      path: "/user/book/:id",
+      element: <Booking/>
     }
     
     
@@ -175,9 +179,9 @@ const router = createBrowserRouter([
  },
  {
   element: (
-    <UserRoutes>
+    <EasyMethod>
       <DoctorLayout/>
-    </UserRoutes>
+    </EasyMethod>
   ),
   children: [
     {
@@ -223,6 +227,10 @@ const router = createBrowserRouter([
     {
       path: "/doctor/appointment",
       element: <UserAppointmentPage/>
+    },
+    {
+      path: "/doctor/book/:id",
+      element: <Booking/>
     }
   ]
  }
