@@ -8,10 +8,9 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
-import dotenv from "dotenv"
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const backendUrl = 'https://medicoba.onrender.com';
 
 let userSchema = yup
   .object({

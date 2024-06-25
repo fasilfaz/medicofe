@@ -4,10 +4,9 @@ import { Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import dotenv from "dotenv";
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const backendUrl = 'https://medicoba.onrender.com';
 
 const DoctorsCard = () => {
   const [users, setUsers] = useState([]);

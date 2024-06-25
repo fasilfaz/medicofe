@@ -3,10 +3,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 import axios from "axios";
 import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
-import dotenv from "dotenv";
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const backendUrl = 'https://medicoba.onrender.com';
 
 
 const Users = () => {

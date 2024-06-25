@@ -4,10 +4,9 @@ import { Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-import dotenv from "dotenv"
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const backendUrl = 'https://medicoba.onrender.com';
 
 const Profile = () => {
   const [user, setUser] = useState(null);

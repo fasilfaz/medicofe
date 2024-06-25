@@ -3,10 +3,9 @@ import { Tabs, message } from "antd"
 import axios from "axios"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import dotenv from "dotenv";
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const backendUrl = 'https://medicoba.onrender.com';
 
 
 const Notifications = () => {

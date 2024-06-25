@@ -9,10 +9,9 @@ import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { useRecoilState } from "recoil";
 import { tokenState } from "../../recoil/tokenAtom";
-import dotenv from "dotenv"
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const backendUrl = 'https://medicoba.onrender.com';
 
 const userSchema = yup
   .object({

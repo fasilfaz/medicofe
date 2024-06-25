@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
-import dotenv from "dotenv"
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const backendUrl = 'https://medicoba.onrender.com';
 
 const UserRoutes = ({children}) => {
     const navigate = useNavigate();

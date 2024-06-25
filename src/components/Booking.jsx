@@ -3,10 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import dotenv from "dotenv";
-dotenv.config();
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+const backendUrl = 'https://medicoba.onrender.com';
 const Booking = () => {
   const [doctors, setDoctors] = useState([]);
   //   const {user} = useSelector((state) => state.user);
