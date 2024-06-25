@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
+import dotenv from "dotenv";
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const serviceSchema = yup
   .object({
@@ -28,7 +32,10 @@ const ServiceUpdate = () => {
     const getService = async () => {
       try {
         let res = await axios
-          .get(`http://localhost:3000/api/v1/admin/get-servicesbyid/${id}`, {
+          .get(
+            `${backendUrl}/api/v1/admin/get-servicesbyid/${id}`
+            // `http://localhost:3000/api/v1/admin/get-servicesbyid/${id}`
+            , {
             withCredentials: true,
           })
           // .then((res) => {

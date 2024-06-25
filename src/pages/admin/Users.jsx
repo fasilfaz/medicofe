@@ -3,7 +3,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 import axios from "axios";
 import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
+import dotenv from "dotenv";
+dotenv.config();
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const Users = () => {
@@ -68,7 +71,10 @@ const Users = () => {
     useEffect(() => {
         const getUsers = async () => {
              
-            const res = await axios.get("http://localhost:3000/api/v1/admin/getAllUsers");
+            const res = await axios.get(
+                `${backendUrl}/api/v1/admin/getAllUsers`,
+                // "http://localhost:3000/api/v1/admin/getAllUsers"
+                );
             const data = await res.data;
             console.log(data);
             setUsers(data);

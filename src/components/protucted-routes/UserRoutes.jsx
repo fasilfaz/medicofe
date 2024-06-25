@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
+import dotenv from "dotenv"
+dotenv.config();
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const UserRoutes = ({children}) => {
     const navigate = useNavigate();
@@ -10,7 +13,8 @@ const UserRoutes = ({children}) => {
         const checkUser = async ( ) => {
             try {
                 const res = await axios.get(
-                    "http://localhost:3000/api/v1/user/check-user",
+                    `${backendUrl}/api/v1/user/check-user`,
+                    // "http://localhost:3000/api/v1/user/check-user",
                     {
                         withCredentials: true,
                     },

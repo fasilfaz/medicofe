@@ -9,6 +9,10 @@ import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { useRecoilState } from "recoil";
 import { tokenState } from "../../recoil/tokenAtom";
+import dotenv from "dotenv"
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const userSchema = yup
   .object({
@@ -30,7 +34,8 @@ const Login = () => {
       // const token = Cookies.get("token");
 
       const res = await axios.post(
-        "http://localhost:3000/api/v1/user/login",
+        `${backendUrl}/api/v1/user/login`,
+        // "http://localhost:3000/api/v1/user/login",
         data,
         // {application},
         { withCredentials: true }

@@ -6,6 +6,10 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Cookies from "js-cookie";
+import dotenv from "dotenv"
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const doctorSchema = yup
   .object({
@@ -23,7 +27,8 @@ const DrLogin = () => {
   const onSubmit = async (data) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/doctor/login",
+        `${backendUrl}/api/v1/doctor/login`,
+        // "http://localhost:3000/api/v1/doctor/login",
         data,
         { withCredentials: true }
       );

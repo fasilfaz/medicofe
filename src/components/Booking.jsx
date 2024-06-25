@@ -3,9 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import dotenv from "dotenv";
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Booking = () => {
   const [doctors, setDoctors] = useState([]);
-//   const {user} = useSelector((state) => state.user);
+  //   const {user} = useSelector((state) => state.user);
   const { id } = useParams();
   const [user, setUser] = useState(null);
 
@@ -13,7 +17,8 @@ const Booking = () => {
     const getProfile = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/api/v1/user/getuser",
+          `${backendUrl}/api/v1/user/getuser`,
+          //   "http://localhost:3000/api/v1/user/getuser",
           {
             withCredentials: true,
           }
@@ -30,26 +35,28 @@ const Booking = () => {
 
   const handleBooking = async () => {
     try {
-        const res = await axios.post(
-            "http://localhost:3000/api/v1/user//book-appointment",{
-                doctorId : id,
-                userId: user._id,
-                doctorInfo: doctors,
-                userInfo: user,
-            }
-
-        );
-        if ( res.data.success ) {
-            setDoctors(res.data.data);
+      const res = await axios.post(
+        `${backendUrl}/api/v1/user//book-appointment`,
+        // "http://localhost:3000/api/v1/user//book-appointment",
+        {
+          doctorId: id,
+          userId: user._id,
+          doctorInfo: doctors,
+          userInfo: user,
         }
+      );
+      if (res.data.success) {
+        setDoctors(res.data.data);
+      }
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-  }
+  };
   useEffect(() => {
     const getdoctors = async () => {
       const res = await axios.get(
-        `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
+        `${backendUrl}/api/v1/user/get-drbyid/${id}`,
+        // `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
         {
           withCredentials: true,
           headers: {
@@ -126,12 +133,14 @@ const Booking = () => {
                 <div className="flex flex-row justify-center pb-2">
                   <div>
                     <Link>
-                      <button className="bg-color
+                      <button
+                        className="bg-color
                        pr-4 pl-4 pt-2 pb-2 
                        rounded-2xl text-white
                         hover:bg-white hover:text-color hover:border-2
                          hover:border-color m-3"
-                         onClick={handleBooking}>
+                        onClick={handleBooking}
+                      >
                         Conform
                       </button>
                     </Link>

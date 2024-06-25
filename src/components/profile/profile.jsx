@@ -4,6 +4,10 @@ import { Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import dotenv from "dotenv"
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -12,7 +16,8 @@ const Profile = () => {
     const getProfile = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/api/v1/user/getuser",
+          `${backendUrl}/api/v1/user/getuser`,
+          // "http://localhost:3000/api/v1/user/getuser",
           {
             withCredentials: true,
           }

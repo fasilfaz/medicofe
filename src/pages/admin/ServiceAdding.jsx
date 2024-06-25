@@ -1,10 +1,14 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Box, Typography, TextField } from "@mui/material";
 import axios from "axios";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import dotenv from "dotenv";
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const serviceSchema = yup.object({
@@ -45,7 +49,8 @@ export default function ServiceAdding () {
         };
         try {
             const res = await axios.post(
-                "http://localhost:3000/api/v1/admin/add-services",
+                `${backendUrl}/api/v1/admin/add-services`,
+                // "http://localhost:3000/api/v1/admin/add-services",
                 reqBody,
                 {
                     withCredentials: true,

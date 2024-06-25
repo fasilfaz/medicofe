@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
+import dotenv from "dotenv";
+dotenv.config();
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 
@@ -15,7 +18,8 @@ const ServiceCard = () => {
         const getAllServices = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:3000/api/v1/admin/get-services",
+                    `${backendUrl}/api/v1/admin/get-services`,
+                    // "http://localhost:3000/api/v1/admin/get-services",
                 );
                 const data = await res.data;
                 console.log("servi", data);
@@ -67,7 +71,8 @@ const ServiceCard = () => {
                         <button className="bg-color pr-4 pl-4 pt-2 pb-2 rounded-2xl text-white hover:bg-white hover:text-color hover:border-2 hover:border-color m-3"
                             onClick={ async () => {
                             const res = await axios.delete(
-                            `http://localhost:3000/api/v1/admin/delete-services/${service._id}`,
+                                `${backendUrl}/api/v1/admin/delete-services/${service._id}`,
+                            // `http://localhost:3000/api/v1/admin/delete-services/${service._id}`,
                              {
                               withCredentials: true
                              }

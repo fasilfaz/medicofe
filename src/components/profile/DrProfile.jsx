@@ -4,6 +4,10 @@ import { Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import dotenv from "dotenv"
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const DrProfile = () => {
     const [doctor, setDoctor] = useState(null);
@@ -12,7 +16,9 @@ const DrProfile = () => {
         const getProfile = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:3000/api/v1/doctor/getDr", {
+                    `${backendUrl}/api/v1/doctor/getDr`,
+                    // "http://localhost:3000/api/v1/doctor/getDr",
+                     {
                     withCredentials: true
                 });
                 const data = await res.data.data;

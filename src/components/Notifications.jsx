@@ -3,6 +3,10 @@ import { Tabs, message } from "antd"
 import axios from "axios"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import dotenv from "dotenv";
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const Notifications = () => {
@@ -11,7 +15,10 @@ const Notifications = () => {
 
     const handleMarkAllRead = async () => {
         try {
-            const res = await axios.post("http://localhost:3000/api/v1/user/get-notification", );
+            const res = await axios.post(
+                `${backendUrl}/api/v1/user/get-notification`,
+                // "http://localhost:3000/api/v1/user/get-notification", 
+                );
             if (res.data.success){
                 message.success(res.data.message)
             } else {
@@ -23,7 +30,10 @@ const Notifications = () => {
     }
     const handleDeleteMarkAllRead = async () => {
         try {
-            const res = await axios.post("http://localhost:3000/api/v1/user/delete-notification",);
+            const res = await axios.post(
+                `${backendUrl}/api/v1/user/delete-notification`,
+                // "http://localhost:3000/api/v1/user/delete-notification",
+                );
             if (res.data.success){
                 message.success(res.data.message)
             } else {

@@ -3,7 +3,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 import axios from "axios";
 import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
+import dotenv from "dotenv";
+dotenv.config();
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 export const Doctors = () => {
@@ -12,7 +15,10 @@ export const Doctors = () => {
     useEffect(() => {
         const getUsers = async () => {
              
-            const res = await axios.get("http://localhost:3000/api/v1/admin/getAllDrs", {
+            const res = await axios.get(
+                `${backendUrl}/api/v1/admin/getAllDrs`,
+                // "http://localhost:3000/api/v1/admin/getAllDrs",
+                 {
                 withCredentials: true
             });
             const data = await res.data;
@@ -23,7 +29,10 @@ export const Doctors = () => {
     },[]);
 
     const handleRemove = async (id) => {
-        const res = await axios.delete(`http://localhost:3000/api/v1/admin/removeDrs/${id}`,{
+        const res = await axios.delete(
+            `${backendUrl}/api/v1/admin/removeDrs/${id}`,
+            // `http://localhost:3000/api/v1/admin/removeDrs/${id}`,
+            {
             withCredentials: true
         })
         console.log(id);

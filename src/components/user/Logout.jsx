@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import dotenv from "dotenv"
+dotenv.config();
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const Logout = () => {
@@ -12,7 +15,8 @@ const Logout = () => {
   const onSubmit = async (data) => {
     try {
     const res = await axios.post(
-      "http://localhost:3000/api/v1/user/logout",
+      `${backendUrl}/api/v1/user/logout`,
+      // "http://localhost:3000/api/v1/user/logout",
       data,{withCredentials:true},)
     if(res.data.message === "logged out"){
       toast.success("log out successfully")

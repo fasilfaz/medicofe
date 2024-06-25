@@ -8,6 +8,10 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
+import dotenv from "dotenv"
+dotenv.config();
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 let userSchema = yup
   .object({
@@ -47,7 +51,8 @@ const Register = () => {
     };
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/user/register",
+        `${backendUrl}/api/v1/user/register`,
+        // "http://localhost:3000/api/v1/user/register",
         reqBody,
         {
           withCredentials: true,

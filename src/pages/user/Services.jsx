@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import dotenv from "dotenv";
+dotenv.config();
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const Services = () => {
 
@@ -10,7 +13,8 @@ const Services = () => {
         const getAllServices = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:3000/api/v1/admin/get-services",
+                  `${backendUrl}/api/v1/admin/get-services`,
+                    // "http://localhost:3000/api/v1/admin/get-services",
                 );
                 const data = await res.data;
                 setServices(data);
