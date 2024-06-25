@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import './index.css'
 import HomeLayout from './components/layout/HomeLayout.jsx'
-import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
+// import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
 import UserHomeLayout from './components/layout/UserHomeLayout.jsx'
 import UserHomePage from './pages/user/UserHomePage.jsx'
 import AdminHomeLayout from './components/layout/AdminLayout.jsx'
@@ -117,9 +117,9 @@ const router = createBrowserRouter([
  },
  {
   element: (
-    <EasyMethod>
+    <UserRoutes>
       <AdminHomeLayout/>
-    </EasyMethod>
+    </UserRoutes>
   ),
   children: [
     {
