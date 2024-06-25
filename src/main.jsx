@@ -42,6 +42,7 @@ import ServiceUpdate from './pages/admin/ServiceUpdate.jsx'
 import Booking from './components/Booking.jsx'
 import { RecoilRoot } from 'recoil'
 import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
+import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
 
 
 const router = createBrowserRouter([
@@ -75,10 +76,10 @@ const router = createBrowserRouter([
   },
  {
   element: (
-   <UserRoutes>
+   <EasyMethod>
    <UserHomeLayout/>
 
-   </UserRoutes>
+   </EasyMethod>
     
       
   ),
@@ -117,9 +118,9 @@ const router = createBrowserRouter([
  },
  {
   element: (
-    <UserRoutes>
+    <EasyMethod>
       <AdminHomeLayout/>
-    </UserRoutes>
+    </EasyMethod>
   ),
   children: [
     {
