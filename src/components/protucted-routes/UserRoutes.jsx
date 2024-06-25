@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
 
 
-const UserRoutes = () => {
+const UserRoutes = ({children}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,9 +27,7 @@ const UserRoutes = () => {
         };
         checkUser();
     },[navigate]);
-    return(
-        <div>UserMethod</div>
-    )
+    return children;
 }
 
 export default UserRoutes;

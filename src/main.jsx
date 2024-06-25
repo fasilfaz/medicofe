@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import './index.css'
 import HomeLayout from './components/layout/HomeLayout.jsx'
-import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
+// import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
 import UserHomeLayout from './components/layout/UserHomeLayout.jsx'
 import UserHomePage from './pages/user/UserHomePage.jsx'
 import AdminHomeLayout from './components/layout/AdminLayout.jsx'
@@ -41,6 +41,7 @@ import AboutPage from './pages/AboutPage.jsx'
 import ServiceUpdate from './pages/admin/ServiceUpdate.jsx'
 import Booking from './components/Booking.jsx'
 import { RecoilRoot } from 'recoil'
+import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
 
 
 const router = createBrowserRouter([
@@ -74,10 +75,10 @@ const router = createBrowserRouter([
   },
  {
   element: (
-   <EasyMethod>
+   <UserRoutes>
    <UserHomeLayout/>
 
-   </EasyMethod>
+   </UserRoutes>
     
       
   ),
@@ -116,9 +117,9 @@ const router = createBrowserRouter([
  },
  {
   element: (
-    <EasyMethod>
+    <UserRoutes>
       <AdminHomeLayout/>
-    </EasyMethod>
+    </UserRoutes>
   ),
   children: [
     {
@@ -173,9 +174,9 @@ const router = createBrowserRouter([
  },
  {
   element: (
-    <EasyMethod>
+    <UserRoutes>
       <DoctorLayout/>
-    </EasyMethod>
+    </UserRoutes>
   ),
   children: [
     {

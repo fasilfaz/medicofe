@@ -18,7 +18,7 @@ const Profile = () => {
           }
         );
         const data = await res.data.data;
-        console.log(data);
+        console.log(data, "profile");
         setUser(data);
       } catch (error) {
         console.log(error);
