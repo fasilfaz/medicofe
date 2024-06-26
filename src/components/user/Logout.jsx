@@ -14,8 +14,8 @@ const Logout = () => {
   const onSubmit = async (data) => {
     try {
     const res = await axios.post(
-      `${backendUrl}/api/v1/user/logout`,
-      // "http://localhost:3000/api/v1/user/logout",
+      // `${backendUrl}/api/v1/user/logout`,
+      "http://localhost:3000/api/v1/user/logout",
       data,{withCredentials:true},)
     if(res.data.message === "logged out"){
       toast.success("log out successfully")

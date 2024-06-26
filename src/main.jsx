@@ -43,6 +43,7 @@ import Booking from './components/Booking.jsx'
 import { RecoilRoot } from 'recoil'
 // import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
 import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
+import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
 
 
 const router = createBrowserRouter([
@@ -76,10 +77,10 @@ const router = createBrowserRouter([
   },
  {
   element: (
-   <EasyMethod>
+   <UserRoutes>
    <UserHomeLayout/>
 
-   </EasyMethod>
+   </UserRoutes>
     
       
   ),
