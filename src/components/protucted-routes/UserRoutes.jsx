@@ -12,8 +12,8 @@ const UserRoutes = ({children}) => {
         const checkUser = async ( ) => {
             try {
                 const res = await axios.get(
-                    // `${backendUrl}/api/v1/user/check-user`,
-                    "http://localhost:3000/api/v1/user/check-user",
+                    `${backendUrl}/api/v1/user/check-user`,
+                    // "http://localhost:3000/api/v1/user/check-user",
                     {
                         withCredentials: true,
                     },
