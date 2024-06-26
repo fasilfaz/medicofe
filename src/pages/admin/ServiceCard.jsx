@@ -28,7 +28,7 @@ const ServiceCard = () => {
             }
         };
         getAllServices();
-    },[]);
+    },);
 
 
     return (

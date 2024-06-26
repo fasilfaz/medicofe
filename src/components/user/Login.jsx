@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
-import { useRecoilState } from "recoil";
-import { tokenState } from "../../recoil/tokenAtom";
+// import { useRecoilState } from "recoil";
+// import { tokenState } from "../../recoil/tokenAtom";
 
 
 const backendUrl = 'https://medicoba.onrender.com';
@@ -39,7 +39,7 @@ const Login = () => {
         // {application},
         { withCredentials: true }
       );
-      setToken(res.data.token);
+      // setToken(res.data.token);
 
       let message = await res.data.message;
       if (message === "Admin logged in successfully") {
@@ -64,7 +64,7 @@ const Login = () => {
       console.log(error);
     }
   };
-  console.log("recoil",token);
+  // console.log("recoil",token);
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
