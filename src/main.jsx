@@ -77,10 +77,10 @@ const router = createBrowserRouter([
   },
  {
   element: (
-   <UserRoutes>
+   <EasyMethod>
    <UserHomeLayout/>
 
-   </UserRoutes>
+   </EasyMethod>
     
       
   ),

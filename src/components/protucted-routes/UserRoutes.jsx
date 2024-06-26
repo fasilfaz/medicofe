@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
+import Cookies from "js-cookie";
 
 
 const backendUrl = 'https://medicoba.onrender.com';
 
 const UserRoutes = ({children}) => {
     const navigate = useNavigate();
+    const token = Cookies.get("token");
+    console.log(token);
 
     useEffect(() => {
         const checkUser = async ( ) => {
