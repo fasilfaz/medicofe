@@ -114,7 +114,7 @@ const router = createBrowserRouter([
       element: <UserAppointmentPage/>
     },
     {
-      path: "/book/:id",
+      path: "/user/book/:id",
       element: <Booking/>
     }
     
