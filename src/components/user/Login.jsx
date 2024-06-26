@@ -21,7 +21,7 @@ const userSchema = yup
   .required();
 
 const Login = () => {
-  const [token, setToken] = useRecoilState(tokenState);
+  // const [token, setToken] = useRecoilState(tokenState);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm({
     resolver: yupResolver(userSchema),
