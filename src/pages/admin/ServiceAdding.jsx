@@ -52,9 +52,9 @@ export default function ServiceAdding () {
                 // "http://localhost:3000/api/v1/admin/add-services",
                 reqBody,
                 {
-                    withCredentials: true,
                     headers: {
                         "Content-Type": "multipart/form-data",
+                        Authorization: "Bearer " + localStorage.getItem("token"),
                     },
                 }
             );

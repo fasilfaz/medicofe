@@ -15,10 +15,9 @@ const Profile = () => {
       try {
         const res = await axios.get(
           `${backendUrl}/api/v1/user/getuser`,
-          
+
           // "http://localhost:3000/api/v1/user/getuser",
           {
-            
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
