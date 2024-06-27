@@ -18,7 +18,6 @@ const DrProfile = () => {
                     `${backendUrl}/api/v1/doctor/getDr`,data,
                     // "http://localhost:3000/api/v1/doctor/getDr",
                      {
-                    withCredentials: true
                 });
                 const data = await res.data.data;
                 console.log(data);
