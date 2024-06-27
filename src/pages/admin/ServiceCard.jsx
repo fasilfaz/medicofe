@@ -38,7 +38,7 @@ const ServiceCard = () => {
                 <p className="text-center text-gray-600 mb-8">At our medical center, we are committed to offering a comprehensive range of healthcare services designed to meet the diverse needs of our patients. 
                 Our goal is to provide high-quality,
                  personalized care to ensure the best possible outcomes. Here is an overview of the key services we provide.</p>
-                <div className='flex justify-center'>
+                <div className='flex justify-center items-center'>
                 <div className="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {services &&
                    services.map((service, index) => (
