@@ -21,14 +21,13 @@ const ServiceCard = () => {
                     // "http://localhost:3000/api/v1/admin/get-services",
                 );
                 const data = await res.data;
-                console.log("servi", data);
                 setServices(data);
             } catch (error) {
                 console.error(error);
             }
         };
         getAllServices();
-    },);
+    },[]);
 
 
     return (

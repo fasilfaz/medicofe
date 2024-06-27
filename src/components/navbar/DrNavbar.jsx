@@ -35,7 +35,7 @@ export const DrNavbar = () => {
       icon: faComments,
     },
     {
-      path: "/user/logout",
+      path: "/doctor/logout",
       icon: faSignOutAlt,
     },
     {

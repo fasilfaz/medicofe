@@ -6,12 +6,12 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 // import { useRecoilState } from "recoil";
 // import { tokenState } from "../../recoil/tokenAtom";
+import authStore from "../../store/authStore";
 
-
-const backendUrl = 'https://medicoba.onrender.com';
+const backendUrl = "https://medicoba.onrender.com";
 
 const userSchema = yup
   .object({
@@ -28,7 +28,6 @@ const Login = () => {
   });
 
   const onSubmit = async (data) => {
-
     try {
       // const token = Cookies.get("token");
 
@@ -39,19 +38,19 @@ const Login = () => {
         // {application},
         { withCredentials: true }
       );
+      console.log(res.data);
+      authStore.getState().login(res.data.token);
+      // localStorage.setItem("token", res.data.token);
       // setToken(res.data.token);
-
+      console.log(res.data.token, "login token");
       let message = await res.data.message;
       if (message === "Admin logged in successfully") {
         toast.success("Admin logged in successfully");
         // Cookies.set('token', res.data.token);
 
-        setTimeout(function () {
-          console.log("before");
-          navigate("/admin/homepage", { replace: true });
-          console.log("after");
-        }, 2000);
-        console.log("data", Cookies.get("token"));
+        
+        navigate("/admin/homepage", { replace: true });
+      
 
         console.log(res.data.message);
       } else if (message === "logged in") {

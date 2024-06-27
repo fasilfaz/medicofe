@@ -45,7 +45,7 @@ export const AdminNavbar = () => {
       icon: faCircleInfo,
     },
     {
-      path: "/user/logout",
+      path: "/admin/logout",
       icon: faSignOutAlt,
     },
    

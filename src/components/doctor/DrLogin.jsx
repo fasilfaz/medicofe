@@ -5,7 +5,8 @@ import * as yup from "yup";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
+import authStore from "../../store/authStore";
 
 
 const backendUrl = 'https://medicoba.onrender.com';
@@ -31,16 +32,18 @@ const DrLogin = () => {
         data,
         { withCredentials: true }
       );
+      authStore.getState().login(res.data.token);
+      console.log(res.data.token, "doctor token");
       let message = await res.data.message;
       if (message === "Doctor logged in successfully") {
         toast.success("Doctor logged in successfully");
 
-        setTimeout(function () {
+      
           console.log("before");
           navigate("/doctor/homepage", { replace: true });
           console.log("after");
-        }, 2000);
-        console.log("data", Cookies.get("token"));
+       
+        
         console.log(res.data.message);
       }
     } catch (error) {

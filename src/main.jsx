@@ -9,12 +9,10 @@ import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import './index.css'
 import HomeLayout from './components/layout/HomeLayout.jsx'
-// import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
 import UserHomeLayout from './components/layout/UserHomeLayout.jsx'
 import UserHomePage from './pages/user/UserHomePage.jsx'
 import AdminHomeLayout from './components/layout/AdminLayout.jsx'
 import Profile from './components/profile/profile.jsx'
-import Logout from './components/user/Logout.jsx'
 import DoctorLayout from './components/layout/DoctorLayaout.jsx'
 import DrLogin from './components/doctor/DrLogin.jsx'
 import DrRegister from './components/doctor/DrRegister.jsx'
@@ -43,7 +41,8 @@ import Booking from './components/Booking.jsx'
 import { RecoilRoot } from 'recoil'
 // import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
 import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
-import UserRoutes from './components/protucted-routes/UserRoutes.jsx'
+// import CheckAuth from './components/protucted-routes/CheckAuth.jsx'
+import Logout from './components/user/Logout.jsx'
 
 
 const router = createBrowserRouter([
@@ -172,6 +171,10 @@ const router = createBrowserRouter([
       path: "/admin/about",
       element: <AboutPage/>
     },
+    {
+      path: '/admin/logout',
+      element: <Logout/>
+    },
     // {
     //   path: "/book/:id",
     //   element: <Booking/>
@@ -228,6 +231,10 @@ const router = createBrowserRouter([
     {
       path: "/doctor/appointment",
       element: <UserAppointmentPage/>
+    },
+    {
+      path: '/doctor/logout',
+      element: <Logout/>
     },
    
   ]
