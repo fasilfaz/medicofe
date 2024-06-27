@@ -15,8 +15,9 @@ const Booking = () => {
     const getProfile = async () => {
       try {
         const res = await axios.get(
-          // `${backendUrl}/api/v1/user/getuser`,
-            "http://localhost:3000/api/v1/user/getuser",{},
+          `${backendUrl}/api/v1/user/getuser`,
+            // "http://localhost:3000/api/v1/user/getuser",
+            {},
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
@@ -61,7 +62,6 @@ const Booking = () => {
         {
           
           headers: {
-            "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
