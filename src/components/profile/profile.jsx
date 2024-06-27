@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
-
-const backendUrl = 'https://medicoba.onrender.com';
+const backendUrl = "https://medicoba.onrender.com";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -16,10 +15,11 @@ const Profile = () => {
       try {
         const res = await axios.get(
           `${backendUrl}/api/v1/user/getuser`,
+          {},
           // "http://localhost:3000/api/v1/user/getuser",
           {
-            headers:{
-              Authorization : "Bearer " + localStorage.getItem("token"),
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
             },
           }
         );
