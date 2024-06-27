@@ -72,7 +72,9 @@ const ServiceCard = () => {
                                 `${backendUrl}/api/v1/admin/delete-services/${service._id}`,
                             // `http://localhost:3000/api/v1/admin/delete-services/${service._id}`,
                              {
-                              withCredentials: true
+                                headers: {
+                                    Authorization: "Bearer " + localStorage.getItem("token"),
+                                  },
                              }
                                );
                             const data = await res.data;
