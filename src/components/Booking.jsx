@@ -19,6 +19,7 @@ const Booking = () => {
             // "http://localhost:3000/api/v1/user/getuser",
             {},
           {
+            withCredentials: true,
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
@@ -60,7 +61,7 @@ const Booking = () => {
         `${backendUrl}/api/v1/user/get-drbyid/${id}`,{},
         // `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
         {
-          
+          withCredentials: true,
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },

@@ -18,6 +18,7 @@ const Profile = () => {
           {},
           // "http://localhost:3000/api/v1/user/getuser",
           {
+            withCredentials: true,
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
