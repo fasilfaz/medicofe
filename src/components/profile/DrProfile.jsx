@@ -21,6 +21,7 @@ const DrProfile = () => {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
+            withCredentials: true,
           }
         );
         const data = await res.data.data;

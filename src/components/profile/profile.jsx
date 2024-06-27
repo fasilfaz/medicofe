@@ -18,10 +18,11 @@ const Profile = () => {
           {},
           // "http://localhost:3000/api/v1/user/getuser",
           {
-            withCredentials: true,
+            
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
+            withCredentials: true,
           }
         );
         const data = await res.data.data;
