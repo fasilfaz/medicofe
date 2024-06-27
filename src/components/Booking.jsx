@@ -17,14 +17,12 @@ const Booking = () => {
         const res = await axios.get(
           `${backendUrl}/api/v1/user/getuser`,
             // "http://localhost:3000/api/v1/user/getuser",
-            {},
+            
           {
             
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
-            withCredentials: true,
-            
           }
         );
         const data = await res.data.data;
@@ -59,13 +57,12 @@ const Booking = () => {
   useEffect(() => {
     const getdoctors = async () => {
       const res = await axios.get(
-        `${backendUrl}/api/v1/user/get-drbyid/${id}`,{},
+        `${backendUrl}/api/v1/user/get-drbyid/${id}`,
         // `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
-          withCredentials: true,
         }
       );
       const data = await res.data.doctor;

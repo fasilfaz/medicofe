@@ -15,13 +15,12 @@ const DrProfile = () => {
       try {
         const res = await axios.get(
           `${backendUrl}/api/v1/doctor/getDr`,
-          {},
+          
           // "http://localhost:3000/api/v1/doctor/getDr",
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
-            withCredentials: true,
           }
         );
         const data = await res.data.data;
