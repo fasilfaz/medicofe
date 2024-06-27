@@ -15,7 +15,7 @@ const Profile = () => {
     const getProfile = async () => {
       try {
         const res = await axios.get(
-          `${backendUrl}/api/v1/user/getuser`,
+          `${backendUrl}/api/v1/user/getuser`,data,
           // "http://localhost:3000/api/v1/user/getuser",
           {
             withCredentials: true,

@@ -15,7 +15,7 @@ const DrProfile = () => {
         const getProfile = async () => {
             try {
                 const res = await axios.get(
-                    `${backendUrl}/api/v1/doctor/getDr`,
+                    `${backendUrl}/api/v1/doctor/getDr`,data,
                     // "http://localhost:3000/api/v1/doctor/getDr",
                      {
                     withCredentials: true
