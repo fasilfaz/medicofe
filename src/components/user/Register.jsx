@@ -88,14 +88,14 @@ const Register = () => {
                   {...register("firstName")}
                   label="First name"
                   type="text"
-                  variant="outlined"
+                  focused
                   fullWidth
                 />
                 <TextField
                   {...register("lastName")}
                   label="Last name"
                   type="text"
-                  variant="outlined"
+                  focused
                   fullWidth
                 />
               </div>
@@ -103,14 +103,14 @@ const Register = () => {
                 {...register("email")}
                 label="Email"
                 type="email"
-                variant="outlined"
+                focused
                 fullWidth
               />
               <TextField
                 {...register("password")}
                 label="Password"
                 type="password"
-                variant="outlined"
+                focused
                 fullWidth
               />
               <div className="grid grid-cols-2 gap-4">
@@ -118,14 +118,14 @@ const Register = () => {
                   {...register("phoneNumber")}
                   type="text"
                   label="Phone Number"
-                  variant="outlined"
+                  focused
                   fullWidth
                 />
                 <TextField
                   {...register("age")}
                   label="Age"
                   type="number"
-                  variant="outlined"
+                  focused
                   fullWidth
                 />
               </div>
@@ -134,14 +134,14 @@ const Register = () => {
                   {...register("gender")}
                   type="text"
                   label="Gender"
-                  variant="outlined"
+                  focused
                   fullWidth
                 />
                 <TextField
                   {...register("bloodGroup")}
                   type="text"
                   label="Blood Group"
-                  variant="outlined"
+                  focused
                   fullWidth
                 />
               </div>
@@ -150,7 +150,8 @@ const Register = () => {
                   {...register("image")}
                   margin="dense"
                   type="file"
-                  variant="outlined"
+                  label="Upload Image"
+                  focused
                   fullWidth
                 />
               </div>
