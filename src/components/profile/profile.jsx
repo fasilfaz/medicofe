@@ -18,6 +18,9 @@ const Profile = () => {
           `${backendUrl}/api/v1/user/getuser`,data,
           // "http://localhost:3000/api/v1/user/getuser",
           {
+            headers:{
+              Authorization : "Bearer " + localStorage.getItem("token"),
+            },
             withCredentials: true,
           }
         );
