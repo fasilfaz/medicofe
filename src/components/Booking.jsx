@@ -2,10 +2,12 @@ import { Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const backendUrl = 'https://medicoba.onrender.com';
 const Booking = () => {
+  const navigate = useNavigate();
   const [doctors, setDoctors] = useState([]);
   //   const {user} = useSelector((state) => state.user);
   const { id } = useParams();
@@ -45,11 +47,18 @@ const Booking = () => {
           userId: user._id,
           doctorInfo: doctors,
           userInfo: user,
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
         }
       );
-      if (res.data.success) {
-        setDoctors(res.data.data);
-      }
+     let message = await res.data.message;
+     if (message === "Appointment created successfully"){
+      toast.success("Booking successfully");
+      window.location.reload();
+      navigate("/user/appointment");
+      
+     } 
     } catch (error) {
       console.log(error);
     }
