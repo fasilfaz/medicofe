@@ -112,7 +112,7 @@ const DrProfile = () => {
                 <p>{doctor.timings}</p>
               </Grid>
             </Grid>
-            <div className="flex flex-row justify-center pb-2 ml-5">
+            <div className="flex flex-row justify-evenly pb-2 ml-5">
             <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
               <Link to="/user/logout">
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
