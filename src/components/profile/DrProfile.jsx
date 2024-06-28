@@ -113,14 +113,14 @@ const DrProfile = () => {
               </Grid>
             </Grid>
             <div className="flex flex-row justify-between pb-2 ml-5">
-              <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
+              <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800 m-3">
                 <Link to="/user/logout">
-                  <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
+                  <FontAwesomeIcon icon={faSignOutAlt} className="m-2" />
                 </Link>
               </button>
-              <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
+              <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800 m-3">
                 <Link to="/doctor/homepage">
-                  <FontAwesomeIcon icon={faHomeAlt} className="mr-2" />
+                  <FontAwesomeIcon icon={faHomeAlt} className="m-2" />
                 </Link>
               </button>
             </div>
