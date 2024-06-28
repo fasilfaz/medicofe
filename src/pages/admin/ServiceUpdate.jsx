@@ -61,7 +61,11 @@ const ServiceUpdate = () => {
       const res = await axios.put(
         `${backendUrl}/api/v1/admin/get-servicesbyid/${id}`,
       //   `http://localhost:3000/api/v1/admin/update-services/${id}`,
-        data,
+        data,{
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
       );
       const message = await res.data.message;
       if ( message === "service updated") {
