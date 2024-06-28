@@ -86,7 +86,7 @@ export default function ServiceAdding() {
           <Typography variant="h4" textAlign="center" className="text-color">
             Add Service
           </Typography>
-          <div>
+        
             <TextField
               {...register("title")}
               margin="normal"
@@ -96,8 +96,8 @@ export default function ServiceAdding() {
               fullWidth
             />
             {errors.title && <p>{errors.title.message}</p>}
-          </div>
-          <div>
+          
+          
             <TextField
               {...register("description")}
               margin="normal"
@@ -107,7 +107,7 @@ export default function ServiceAdding() {
               fullWidth
             />
             {errors.description && <p>{errors.description.message}</p>}
-          </div>
+          
           <div>
             <TextField
               {...register("image")}
