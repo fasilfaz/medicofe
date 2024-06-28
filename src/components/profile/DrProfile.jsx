@@ -3,7 +3,7 @@ import axios from "axios";
 import { Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faHomeAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const backendUrl = "https://medicoba.onrender.com";
 
@@ -112,11 +112,19 @@ const DrProfile = () => {
                 <p>{doctor.timings}</p>
               </Grid>
             </Grid>
+            <div className="flex flex-row justify-center pb-2 ml-5">
             <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
               <Link to="/user/logout">
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
               </Link>
             </button>
+            <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
+                <Link to='/doctor/homepage'>
+                  <FontAwesomeIcon icon={faHomeAlt} className="mr-2" />
+                </Link>
+              </button>
+            </div>
+            
           </span>
         </Box>
       ) : (
