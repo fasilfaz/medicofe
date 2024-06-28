@@ -57,7 +57,7 @@ const Booking = () => {
 
   const handleBooking = async () => {
     try {
-      const res = await axios.post(
+      const res = await axios.get(
         `${backendUrl}/api/v1/user//book-appointment`,
         // "http://localhost:3000/api/v1/user//book-appointment",
         {
