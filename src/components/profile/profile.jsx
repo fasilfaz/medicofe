@@ -97,33 +97,30 @@ const Profile = () => {
                   <p>{user.phoneNumber}</p>
                 </Grid>
               </Grid>
-              <div className="flex flex-row justify-around pb-2">
-              <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
-                <Link to="/user/logout">
-                  <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
-                </Link>
-              </button>
-              
-              
-              {user.role === 'ADMIN' && (
+              <div className="flex flex-row justify-between pb-2">
                 <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
-                <Link to='/admin/homepage'>
-                  <FontAwesomeIcon icon={faHomeAlt} className="mr-2" />
-                </Link>
-              </button>
-              )}
-              {user.role !== 'ADMIN' && (
-                  <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
-                  <Link to="/userhome">
-                    <FontAwesomeIcon icon={faHomeAlt} className="mr-2" />
+                  <Link to="/user/logout">
+                    <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
                   </Link>
                 </button>
-              )}
+
+                {user.role === "ADMIN" && (
+                  <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
+                    <Link to="/admin/homepage">
+                      <FontAwesomeIcon icon={faHomeAlt} className="mr-2" />
+                    </Link>
+                  </button>
+                )}
+                {user.role !== "ADMIN" && (
+                  <button className="bg-teal-800 px-3 py-1 mt-5 rounded-2xl text-white hover:bg-white hover:text-teal-800 hover:border-2 hover:border-teal-800">
+                    <Link to="/userhome">
+                      <FontAwesomeIcon icon={faHomeAlt} className="mr-2" />
+                    </Link>
+                  </button>
+                )}
               </div>
-              
             </span>
           </Box>
-          
         </div>
       ) : (
         <p>Loading...</p>
