@@ -37,32 +37,6 @@ const Booking = () => {
     getProfile();
   }, []);
 
-  const handleBooking = async () => {
-    try {
-      const res = await axios.post(
-        `${backendUrl}/api/v1/user//book-appointment`,
-        // "http://localhost:3000/api/v1/user//book-appointment",
-        {
-          doctorId: id,
-          userId: user._id,
-          doctorInfo: doctors,
-          userInfo: user,
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
-     let message = await res.data.message;
-     if (message === "Appointment created successfully"){
-      toast.success("Booking successfully");
-      window.location.reload();
-      navigate("/user/appointment");
-      
-     } 
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
     const getdoctors = async () => {
       const res = await axios.get(
@@ -80,6 +54,36 @@ const Booking = () => {
     };
     getdoctors();
   }, []);
+
+  const handleBooking = async () => {
+    try {
+      const res = await axios.post(
+        `${backendUrl}/api/v1/user//book-appointment`,
+        // "http://localhost:3000/api/v1/user//book-appointment",
+        {
+          
+          doctorId: id,
+          userId: user._id,
+          doctorInfo: doctors,
+          userInfo: user,
+          withCredentials: true,
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
+     let message = await res.data.message;
+     if (message === "Appointment created successfully"){
+      toast.success("Booking successfully");
+      window.location.reload();
+      navigate("/user/appointment");
+      
+     } 
+    } catch (error) {
+      console.log(error ,"booking error");
+    }
+  };
+ 
   return (
     <section className="p-20 bg-gray-100">
       <div className="container">
