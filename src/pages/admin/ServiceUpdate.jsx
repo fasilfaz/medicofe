@@ -67,7 +67,7 @@ const ServiceUpdate = () => {
         }
       );
       toast.success("Service updated successfully")
-      navigate("/admin/services-card");
+      navigate("/admin/services-page");
       // const message = await res.data.message;
       // if ( message === "service updated") {
       //   window.location.reload();
