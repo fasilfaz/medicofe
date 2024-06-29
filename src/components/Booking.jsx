@@ -56,17 +56,21 @@ const Booking = () => {
   }, []);
 
   const handleBooking = async () => {
-    try {
-      const res = await axios.get(
-        `${backendUrl}/api/v1/user/book-appointment`,
-        // "http://localhost:3000/api/v1/user/book-appointment",
-        {
-          
+    const data = {
           doctorId: id,
           userId: user._id,
           doctorInfo: doctors,
           userInfo: user,
-          withCredentials: true,
+    }
+    console.log(data);
+    try {
+      const res = await axios.get(
+        `${backendUrl}/api/v1/user/book-appointment`, data,
+        // "http://localhost:3000/api/v1/user/book-appointment",
+        {
+          
+          
+          // withCredentials: true,
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
