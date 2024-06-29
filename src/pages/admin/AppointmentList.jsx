@@ -12,27 +12,31 @@ const AppointmentList = () => {
     const [appointments, setAppointments] = useState([]);
     const columns = [
         {
-            name: "firstName",
+            name: "userFName",
             label: "First Name",
             options: {
                 customBodyRender: (value) => <p className="capitalize">{value}</p>,
             },
         },
         {
-            name: "lastName",
+            name: "userLName",
             label: "Last Name",
         },
     
         {
-            name: "phoneNumber",
+            name: "userPhoneNumber",
             label: "Phone Number",
         },
         {
-            name:"doctor",
+            name:"doctorFName",
             label: "Doctor",
             // options: {
             //     customBodyRender: (value) => <p className="capitalize">{value.firstName} {value.lastName}</p>,
             // },
+        },
+        {
+            name: "doctorLName",
+            label: "Doctor Last Name",
         }
      
      
@@ -70,7 +74,7 @@ const AppointmentList = () => {
     // const handleRemove = async (rowIndex) => {
     //     const userId = users[rowIndex].id;
     //     try {
-    //         await axios.delete(`http://localhost:3000/api/v1/admin/removeUser/${userId}`);
+    //         await axios.delete();
     //         const updatedUsers = [...users];
     //         updatedUsers.splice(rowIndex, 1);
     //         setUsers(updatedUsers);

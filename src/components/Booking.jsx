@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -9,7 +8,6 @@ const backendUrl = "https://medicoba.onrender.com";
 const Booking = () => {
   const navigate = useNavigate();
   const [doctors, setDoctors] = useState([]);
-  //   const {user} = useSelector((state) => state.user);
   const { id } = useParams();
   const [user, setUser] = useState(null);
 
@@ -57,8 +55,11 @@ const Booking = () => {
 
   const handleBooking = async () => {
     const data = {
-      doctorInfo: doctors,
-      userInfo: user,
+      doctorFName : doctors.firstName ,
+      userFName: user.firstName ,
+      userLName: user.lastName,
+      doctorLName: doctors.lastName,
+      userPhoneNumber: user.phoneNumber
     };
     console.log(data, "appointment");
     try {
