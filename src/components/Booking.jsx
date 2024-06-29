@@ -62,15 +62,15 @@ const Booking = () => {
           doctorInfo: doctors,
           userInfo: user,
     }
-    console.log(data);
+    console.log(data,"appointment");
     try {
-      const res = await axios.get(
+      const res = await axios.post(
         `${backendUrl}/api/v1/user/book-appointment`, data,
         // "http://localhost:3000/api/v1/user/book-appointment",
         {
           
           
-          // withCredentials: true,
+          withCredentials: true,
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
