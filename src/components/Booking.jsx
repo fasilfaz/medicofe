@@ -40,8 +40,8 @@ const Booking = () => {
   useEffect(() => {
     const getdoctors = async () => {
       const res = await axios.get(
-        // `${backendUrl}/api/v1/user/get-drbyid/${id}`,
-        `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
+        `${backendUrl}/api/v1/user/get-drbyid/${id}`,
+        // `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -63,10 +63,10 @@ const Booking = () => {
     console.log(data, "appointment");
     try {
       const res = await axios.post(
-        // `${backendUrl}/api/v1/user/book-appointment`,
-        // data,
-        "http://localhost:3000/api/v1/user/book-appointment",
+        `${backendUrl}/api/v1/user/book-appointment`,
         data,
+        // "http://localhost:3000/api/v1/user/book-appointment",
+        // data,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
