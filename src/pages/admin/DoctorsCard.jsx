@@ -13,8 +13,8 @@ const DoctorsCard = () => {
   useEffect(() => {
     const getUsers = async () => {
       const res = await axios.get(
-        // `${backendUrl}/api/v1/admin/getAllDrs`,
-        "http://localhost:3000/api/v1/admin/getAllDrs",
+        `${backendUrl}/api/v1/admin/getAllDrs`,
+        // "http://localhost:3000/api/v1/admin/getAllDrs",
         {
           withCredentials: true,
           headers: {
