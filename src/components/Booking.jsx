@@ -64,7 +64,7 @@ const Booking = () => {
     }
     console.log(data,"appointment");
     try {
-      const res = await axios.post(
+      const res = await axios.git(
         `${backendUrl}/api/v1/user/book-appointment`, data,
         // "http://localhost:3000/api/v1/user/book-appointment",
         {
