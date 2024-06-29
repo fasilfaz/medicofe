@@ -66,12 +66,13 @@ const ServiceUpdate = () => {
           },
         }
       );
-      const message = await res.data.message;
-      if ( message === "service updated") {
-        window.location.reload();
-        toast.success("Service updated successfully")
-        navigate("/admin/services-card");
-      }
+      toast.success("Service updated successfully")
+      navigate("/admin/services-card");
+      // const message = await res.data.message;
+      // if ( message === "service updated") {
+      //   window.location.reload();
+       
+      // }
      
       console.log(data, "gggggg");
     } catch (error) {
