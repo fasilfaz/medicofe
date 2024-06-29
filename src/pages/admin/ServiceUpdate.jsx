@@ -14,7 +14,6 @@ const serviceSchema = yup
   .object({
     title: yup.string().required(),
     description: yup.string().required(),
-    image: yup.mixed().required(),
   })
   .required();
 

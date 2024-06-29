@@ -67,9 +67,7 @@ const Booking = () => {
           doctorInfo: doctors,
           userInfo: user,
           withCredentials: true,
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
+        
         }
       );
      let message = await res.data.message;
