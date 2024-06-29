@@ -56,7 +56,7 @@ const AppointmentList = () => {
         const getUsers = async () => {
              
             const res = await axios.get(
-                `${backendUrl}/api/v1/admin/getAllUsers`,
+                `${backendUrl}/api/v1/admin/getAppointment`,
                 // "http://localhost:3000/api/v1/admin/getAppointment"
                 );
             const data = await res.data;
