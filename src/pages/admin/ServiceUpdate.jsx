@@ -58,7 +58,7 @@ const ServiceUpdate = () => {
   const onSubmit = async (data) => {
     try {
       const res = await axios.put(
-        `${backendUrl}/api/v1/admin/get-servicesbyid/${id}`,
+        `${backendUrl}/api/v1/admin/update-services/${id}`,
       //   `http://localhost:3000/api/v1/admin/update-services/${id}`,
         data,{
           headers: {
