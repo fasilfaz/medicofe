@@ -24,7 +24,7 @@ import Users from './pages/admin/Users.jsx'
 import { Doctors } from './pages/admin/Doctors.jsx'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import Notifications from './components/Notifications.jsx'
+// import Notifications from './components/Notifications.jsx'
 import { Provider } from 'react-redux'
 import store from './components/redux/store.jsx'
 import ServiceAdding from './pages/admin/ServiceAdding.jsx'
@@ -43,6 +43,7 @@ import { RecoilRoot } from 'recoil'
 import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
 // import CheckAuth from './components/protucted-routes/CheckAuth.jsx'
 import Logout from './components/user/Logout.jsx'
+import AppointmentList from './pages/admin/AppointmentList.jsx'
 
 
 const router = createBrowserRouter([
@@ -159,10 +160,10 @@ const router = createBrowserRouter([
       path: "/admin/services-page",
       element: <ServicePage/>
     },
-    {
-      path: "/admin/notifications",
-      element: <Notifications/>
-    },
+    // {
+    //   path: "/admin/notifications",
+    //   element: <Notifications/>
+    // },
     {
       path: "/admin/doctorscard",
       element: <DoctorsCard/>
@@ -175,6 +176,10 @@ const router = createBrowserRouter([
       path: '/admin/logout',
       element: <Logout/>
     },
+    {
+      path: 'admin/appointmentList',
+      element: <AppointmentList/>
+    }
     // {
     //   path: "/book/:id",
     //   element: <Booking/>

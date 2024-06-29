@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const backendUrl = 'https://medicoba.onrender.com';
+const backendUrl = "https://medicoba.onrender.com";
 const Booking = () => {
   const navigate = useNavigate();
   const [doctors, setDoctors] = useState([]);
@@ -17,11 +17,11 @@ const Booking = () => {
     const getProfile = async () => {
       try {
         const res = await axios.get(
-          `${backendUrl}/api/v1/user/getuser`,
-            // "http://localhost:3000/api/v1/user/getuser",
-            
+          // `${backendUrl}/api/v1/user/getuser`,
+          "http://localhost:3000/api/v1/user/getuser",
+
           {
-            
+            withCredentials: true,
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
@@ -40,8 +40,8 @@ const Booking = () => {
   useEffect(() => {
     const getdoctors = async () => {
       const res = await axios.get(
-        `${backendUrl}/api/v1/user/get-drbyid/${id}`,
-        // `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
+        // `${backendUrl}/api/v1/user/get-drbyid/${id}`,
+        `http://localhost:3000/api/v1/user/get-drbyid/${id}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -57,38 +57,29 @@ const Booking = () => {
 
   const handleBooking = async () => {
     const data = {
-          doctorId: id,
-          userId: user._id,
-          doctorInfo: doctors,
-          userInfo: user,
-    }
-    console.log(data,"appointment");
+      doctorInfo: doctors,
+      userInfo: user,
+    };
+    console.log(data, "appointment");
     try {
-      const res = await axios.get(
-        `${backendUrl}/api/v1/user/book-appointment`, data,
-        // "http://localhost:3000/api/v1/user/book-appointment",
+      const res = await axios.post(
+        // `${backendUrl}/api/v1/user/book-appointment`,
+        // data,
+        "http://localhost:3000/api/v1/user/book-appointment",
+        data,
         {
-          
-          
-          withCredentials: true,
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
-        
         }
       );
-     let message = await res.data.message;
-     if (message === "Appointment created successfully"){
       toast.success("Booking successfully");
-      window.location.reload();
       navigate("/user/appointment");
-      
-     } 
     } catch (error) {
-      console.log(error ,"booking error");
+      console.log(error, "booking error");
     }
   };
- 
+
   return (
     <section className="p-20 bg-gray-100">
       <div className="container">
