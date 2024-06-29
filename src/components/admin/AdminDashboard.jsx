@@ -19,7 +19,7 @@ const AdminDashboard = () => {
           </p>
 
           <button className="bg-color text-white py-2 px-4 rounded hover:bg-white hover:text-color hover:border-2 hover:border-color">
-            <Link to="/view-appointment">View Appointments</Link>
+            <Link to="/admin/appointmentList">View Appointments</Link>
           </button>
         </div>
         <div className="flex justify-center">

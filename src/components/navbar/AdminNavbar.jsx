@@ -36,7 +36,7 @@ export const AdminNavbar = () => {
     //   value: "card",
     // },
     {
-      path:'admin/appointmentList',
+      path:'/admin/appointmentList',
       icon: faBell,
     },
     

@@ -177,7 +177,7 @@ const router = createBrowserRouter([
       element: <Logout/>
     },
     {
-      path: 'admin/appointmentList',
+      path: '/admin/appointmentList',
       element: <AppointmentList/>
     }
     // {
@@ -241,6 +241,10 @@ const router = createBrowserRouter([
       path: '/doctor/logout',
       element: <Logout/>
     },
+    {
+      path: '/doctor/appointmentList',
+      element: <AppointmentList/>
+    }
    
   ]
  }

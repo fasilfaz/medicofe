@@ -33,7 +33,7 @@ export const DrHome = () => {
                             hover:border-2 
                             hover:border-color 
                             ml-14">
-            <Link to="/view-appointment" >
+            <Link to='/doctor/appointmentList'>
             View Appointments
             </Link>
           

@@ -29,7 +29,7 @@ const AppointmentList = () => {
         },
         {
             name:"doctorFName",
-            label: "Doctor",
+            label: "Doctor First Name",
             // options: {
             //     customBodyRender: (value) => <p className="capitalize">{value.firstName} {value.lastName}</p>,
             // },

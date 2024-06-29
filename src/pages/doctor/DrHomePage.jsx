@@ -11,7 +11,6 @@ export const DrHomePage = () => {
     <>
         <AdminDashboard/>
         <Services/>
-        <DoctorsCard/>
         <ContactForm/>
         <AboutUs/>
         <Footer/>
