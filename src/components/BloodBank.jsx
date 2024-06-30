@@ -1,7 +1,6 @@
 
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import axios from "axios";
-import { format } from "date-fns";
 import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
 
@@ -9,86 +8,52 @@ import { useEffect, useState } from "react";
 const backendUrl = 'https://medicoba.onrender.com';
 
 
-const AppointmentList = () => {
-    const [appointments, setAppointments] = useState([]);
+const BloodBank = () => {
+    const [users, setUsers] = useState([]);
     const columns = [
         {
-            name: "appointmentDate",
-            label: "Date",
-         
-        },
-        {
-            name: "userFName",
+            name: "firstName",
             label: "First Name",
             options: {
                 customBodyRender: (value) => <p className="capitalize">{value}</p>,
             },
         },
         {
-            name: "userLName",
+            name: "lastName",
             label: "Last Name",
         },
-    
         {
-            name: "userPhoneNumber",
+            name: "bloodGroup",
+            label: "Blood Group",
+            options: {
+                customBodyRender: (value) => <p className="capitalize">{value}</p>,
+            },
+        },
+        {
+            name: "phoneNumber",
             label: "Phone Number",
         },
-        {
-            name:"doctorFName",
-            label: "Doctor First Name",
-            // options: {
-            //     customBodyRender: (value) => <p className="capitalize">{value.firstName} {value.lastName}</p>,
-            // },
-        },
-        {
-            name: "doctorLName",
-            label: "Doctor Last Name",
-        }
-     
-     
+   
         
-      
-        // {
-        //     name: "remove",
-        //     options: {
-        //         customBodyRender: (value, tableMeta) => (
-        //             <button className="bg-rose-600 px-3 py-1 inline-block rounded-full text-white "
-        //             onClick={ () => handleRemove(tableMeta.rowIndex)}>
-        //              remove
-        //             </button>
-        //         ),
-        //         filter: false,
-        //     },
-        // },
+        
+  
         
     ];
     useEffect(() => {
         const getUsers = async () => {
              
             const res = await axios.get(
-                `${backendUrl}/api/v1/admin/getAppointment`,
-                // "http://localhost:3000/api/v1/admin/getAppointment"
+                `${backendUrl}/api/v1/admin/getAllUsers`,
+                // "http://localhost:3000/api/v1/admin/getAllUsers"
                 );
             const data = await res.data;
             console.log(data);
-            setAppointments(data);
+            setUsers(data);
         };
         getUsers();
     },[]);
 
 
-    // const handleRemove = async (rowIndex) => {
-    //     const userId = users[rowIndex].id;
-    //     try {
-    //         await axios.delete();
-    //         const updatedUsers = [...users];
-    //         updatedUsers.splice(rowIndex, 1);
-    //         setUsers(updatedUsers);
-    //         console.log("User deleted successfully");
-    //     } catch (error) {
-    //         console.error("Error deleting user:", error);
-    //     }
-    // }
        
        const options = {
          selectableRows: false,
@@ -125,11 +90,11 @@ const AppointmentList = () => {
 
   return (
     <div className="py-10 min-h-screen grid place-items-center">
-        <div className="max-w-10xl">
+        <div className="w-10/12 max-w-10xl">
             <ThemeProvider theme={getMuiTheme}>
                 <MUIDataTable
-                title={"Appointment List"}
-                data={appointments}
+                title={"Patients List"}
+                data={users}
                 columns={columns}
                 options={options}
                 />
@@ -140,4 +105,4 @@ const AppointmentList = () => {
   )
 }
 
-export default AppointmentList;
+export default BloodBank;

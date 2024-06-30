@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from "date-fns";
+import {  addDays } from "date-fns";
 
 const backendUrl = "https://medicoba.onrender.com";
 const Booking = () => {
@@ -58,8 +58,7 @@ const Booking = () => {
   }, []);
 
   const handleBooking = async () => {
-    const formattedDate = format(selectedDate, "dd-mm-yyyy");
-
+    const formattedDate = addDays(selectedDate, 1);
     const data = {
       
       doctorFName: doctors.firstName,
@@ -155,6 +154,7 @@ const Booking = () => {
                     selected={selectedDate}
                     onChange={(date) => setSelectedDate(date)}
                     className="w-full p-2 border border-gray-300 rounded-lg"
+                    minDate={new Date()}
                   />
                 </Grid>
                 <div className="flex flex-row justify-center pb-2">

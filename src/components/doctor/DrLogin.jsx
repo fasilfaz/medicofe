@@ -40,7 +40,7 @@ const DrLogin = () => {
 
       
           console.log("before");
-          navigate("/doctor/homepage", { replace: true });
+          navigate('/doctor/homepage', { replace: true });
           console.log("after");
        
         

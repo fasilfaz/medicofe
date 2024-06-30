@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import drbg from "../../assets/drwbg.png";
+import {  faDroplet,  } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const UserHome = () => {
   return (
@@ -24,6 +26,25 @@ const UserHome = () => {
         <div className="flex justify-center">
           <img src={drbg} alt="Doctor" className="rounded-lg " />
         </div>
+        <butoon
+      className="fixed
+      text-xl
+      bottom-20 
+      right-20 
+      p-4 
+      rounded-full 
+      shadow-lg
+       bg-red-600 
+    text-white 
+    hover:bg-white
+     hover:text-red-600 
+     hover:border-2 
+     hover:border-red-600"
+    >
+      <Link to="/user/bloodbank">
+        <FontAwesomeIcon icon={faDroplet} className="mr-2" />Blood Bank
+      </Link>
+    </butoon>
       </div>
     </div>
   );

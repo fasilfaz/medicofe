@@ -44,6 +44,8 @@ import EasyMethod from './components/protucted-routes/EasyMethod.jsx'
 // import CheckAuth from './components/protucted-routes/CheckAuth.jsx'
 import Logout from './components/user/Logout.jsx'
 import AppointmentList from './pages/admin/AppointmentList.jsx'
+import BloodBank from './components/BloodBank.jsx'
+import { DrHome } from './components/doctor/DrHome.jsx'
 
 
 const router = createBrowserRouter([
@@ -116,6 +118,10 @@ const router = createBrowserRouter([
     {
       path: "/user/book/:id",
       element: <Booking/>
+    },
+    {
+      path: '/user/bloodbank',
+      element: <BloodBank/>
     }
     
     
@@ -179,6 +185,10 @@ const router = createBrowserRouter([
     {
       path: '/admin/appointmentList',
       element: <AppointmentList/>
+    },
+    {
+      path: '/admin/bloodbank',
+      element: <BloodBank/>
     }
     // {
     //   path: "/book/:id",
@@ -204,6 +214,10 @@ const router = createBrowserRouter([
     {
       path: '/doctor/register',
       element: <DrRegister/>
+    },
+    {
+      path:'/doctor/home',
+      element: <DrHome/>
     },
     {
       path: '/doctor/users',
@@ -244,6 +258,10 @@ const router = createBrowserRouter([
     {
       path: '/doctor/appointmentList',
       element: <AppointmentList/>
+    },
+    {
+      path: '/doctor/bloodbank',
+      element: <BloodBank/>
     }
    
   ]
