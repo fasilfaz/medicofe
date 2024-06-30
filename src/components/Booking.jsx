@@ -58,7 +58,7 @@ const Booking = () => {
   }, []);
 
   const handleBooking = async () => {
-    const formattedDate = format(selectedDate, "yyyy-MM-dd");
+    const formattedDate = format(selectedDate, "dd-mm-yyyy");
 
     const data = {
       
