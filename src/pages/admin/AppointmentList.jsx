@@ -12,6 +12,10 @@ const AppointmentList = () => {
     const [appointments, setAppointments] = useState([]);
     const columns = [
         {
+            name: "appointmentDate",
+            label: "Date",
+        },
+        {
             name: "userFName",
             label: "First Name",
             options: {

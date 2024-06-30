@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const backendUrl = "https://medicoba.onrender.com";
 const Booking = () => {
@@ -10,6 +12,7 @@ const Booking = () => {
   const [doctors, setDoctors] = useState([]);
   const { id } = useParams();
   const [user, setUser] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     const getProfile = async () => {
@@ -55,11 +58,12 @@ const Booking = () => {
 
   const handleBooking = async () => {
     const data = {
-      doctorFName : doctors.firstName ,
-      userFName: user.firstName ,
+      doctorFName: doctors.firstName,
+      userFName: user.firstName,
       userLName: user.lastName,
       doctorLName: doctors.lastName,
-      userPhoneNumber: user.phoneNumber
+      userPhoneNumber: user.phoneNumber,
+      appointmentDate: selectedDate,
     };
     console.log(data, "appointment");
     try {
@@ -140,6 +144,14 @@ const Booking = () => {
                     <p className="text-color font-bold text-lg">Time</p>
                     <p>{doctors.timings}</p>
                   </Grid>
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+                  <p className="text-color font-bold text-lg">Date</p>
+                  <DatePicker
+                    selected={selectedDate}
+                    onChange={(date) => setSelectedDate(date)}
+                    className="w-full p-2 border border-gray-300 rounded-lg"
+                  />
                 </Grid>
                 <div className="flex flex-row justify-center pb-2">
                   <div>
