@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { format } from "date-fns";
 
 const backendUrl = "https://medicoba.onrender.com";
 const Booking = () => {
@@ -57,13 +58,16 @@ const Booking = () => {
   }, []);
 
   const handleBooking = async () => {
+    const formattedDate = format(selectedDate, "yyyy-MM-dd");
+
     const data = {
+      
       doctorFName: doctors.firstName,
       userFName: user.firstName,
       userLName: user.lastName,
       doctorLName: doctors.lastName,
       userPhoneNumber: user.phoneNumber,
-      appointmentDate: selectedDate,
+      appointmentDate: formattedDate,
     };
     console.log(data, "appointment");
     try {
