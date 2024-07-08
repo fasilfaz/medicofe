@@ -54,7 +54,7 @@ const Register = () => {
     };
     try {
       const res = await axios.post(
-        `${backendUrl}/api/v1/doctor/register}`,
+        `${backendUrl}/api/v1/doctor/register`,
         // "http://localhost:3000/api/v1/doctor/register",
         reqBody,
         {
