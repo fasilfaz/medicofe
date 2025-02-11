@@ -7,7 +7,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {  addDays } from "date-fns";
 
-const backendUrl = "https://tomet-backent.vercel.app/";
+const backendUrl = "https://tomet-backent.vercel.app";
 const Booking = () => {
   const navigate = useNavigate();
   const [doctors, setDoctors] = useState([]);
