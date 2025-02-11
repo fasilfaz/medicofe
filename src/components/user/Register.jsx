@@ -10,7 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 
 
-const backendUrl = 'https://medicoba.onrender.com';
+const backendUrl = 'https://tomet-backent.vercel.app/';
 
 let userSchema = yup
   .object({

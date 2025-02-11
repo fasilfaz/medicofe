@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
-const backendUrl = "https://medicoba.onrender.com";
+const backendUrl = "https://tomet-backent.vercel.app/";
 
 const serviceSchema = yup
   .object({

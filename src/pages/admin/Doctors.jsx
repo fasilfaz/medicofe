@@ -5,7 +5,7 @@ import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
 
 
-const backendUrl ='https://medicoba.onrender.com';
+const backendUrl ='https://tomet-backent.vercel.app/';
 
 
 export const Doctors = () => {

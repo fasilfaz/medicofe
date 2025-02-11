@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 // import { tokenState } from "../../recoil/tokenAtom";
 import authStore from "../../store/authStore";
 
-const backendUrl = "https://medicoba.onrender.com";
+const backendUrl = "https://tomet-backent.vercel.app/";
 
 const userSchema = yup
   .object({

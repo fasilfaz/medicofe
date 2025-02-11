@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
 
-const backendUrl = 'https://medicoba.onrender.com';
+const backendUrl = 'https://tomet-backent.vercel.app/';
 
 
 
