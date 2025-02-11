@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHomeAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
-const backendUrl = "https://tomet-backent.vercel.app";
+const backendUrl = "https://medicoba.vercel.app";
 
 const Profile = () => {
   const [user, setUser] = useState(null);

@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import * as yup from "yup";
 
 
-const backendUrl = 'https://tomet-backent.vercel.app';
+const backendUrl = 'https://medicoba.vercel.app';
 
 const serviceSchema = yup
   .object({

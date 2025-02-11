@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import authStore from "../../store/authStore";
 
 
-const backendUrl = 'https://tomet-backent.vercel.app';
+const backendUrl = 'https://medicoba.vercel.app';
 
 const doctorSchema = yup
   .object({
